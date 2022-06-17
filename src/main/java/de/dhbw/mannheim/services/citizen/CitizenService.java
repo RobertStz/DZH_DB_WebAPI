@@ -49,6 +49,8 @@ public class CitizenService implements ICitizenService {
 
     @Override
     public Citizen createCitizen(Citizen citizen) {
+        if(!citizen.getId().equals(0L))
+            return null;
         return this.citizenRepository.save(citizen);
     }
 

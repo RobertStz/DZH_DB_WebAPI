@@ -35,6 +35,8 @@ public class ProcessService implements IProcessService {
 
     @Override
     public Process insertProcess(Process process) {
+        if(!process.getId().equals(0L))
+            return null;
         return this.processRepository.save(process);
     }
 

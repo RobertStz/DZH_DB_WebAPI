@@ -38,6 +38,8 @@ public class AuthorityService implements IAuthorityService {
 
     @Override
     public Authority insertAuthority(Authority authority) {
+        if(!authority.getId().equals(0L))
+            return null;
         return this.authorityRepository.save(authority);
     }
 

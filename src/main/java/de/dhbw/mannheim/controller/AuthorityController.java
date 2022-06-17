@@ -39,7 +39,11 @@ public class AuthorityController {
 
     @PostMapping
     public ResponseEntity<Authority> create(@RequestBody Authority authority) {
-        return new ResponseEntity<>(this.authorityService.insertAuthority(authority), HttpStatus.CREATED);
+        Authority savedAuthority = this.authorityService.insertAuthority(authority);
+        if (savedAuthority == null)
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        else
+            return new ResponseEntity<>(savedAuthority, HttpStatus.CREATED);
     }
 
     @PutMapping("{id}")
@@ -61,7 +65,7 @@ public class AuthorityController {
 
     @GetMapping("{id}/messages")
     public ResponseEntity<List<Message>> getMessages(@PathVariable Long id) {
-        return new ResponseEntity<>(this.authorityService.getMessagesByAuthority(id),HttpStatus.FOUND);
+        return new ResponseEntity<>(this.authorityService.getMessagesByAuthority(id), HttpStatus.FOUND);
     }
 
     @GetMapping("{id}/processes")

@@ -26,6 +26,8 @@ public class MessageService implements IMessageService {
 
     @Override
     public Message insertMessage(Message message) {
+        if(!message.getId().equals(0L))
+            return null;
         return this.messageRepository.save(message);
     }
 
