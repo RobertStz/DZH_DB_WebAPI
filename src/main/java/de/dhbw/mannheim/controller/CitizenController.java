@@ -34,7 +34,7 @@ public class CitizenController {
 
     @GetMapping("{id}")
     public ResponseEntity<Citizen> get(@PathVariable Long id) {
-        Citizen citizen = this.citizenService.get(id);
+        Citizen citizen = this.citizenService.getCitizen(id);
         if(citizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
@@ -43,7 +43,7 @@ public class CitizenController {
 
     @PostMapping
     public ResponseEntity<Citizen> create(@RequestBody Citizen citizen) {
-        Citizen savedCitizen = this.citizenService.create(citizen);
+        Citizen savedCitizen = this.citizenService.createCitizen(citizen);
         if(savedCitizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
@@ -52,7 +52,7 @@ public class CitizenController {
 
     @PutMapping("{id}")
     public ResponseEntity<Citizen> update(@PathVariable Long id, @RequestBody Citizen citizen) {
-        Citizen savedCitizen = this.citizenService.update(id, citizen);
+        Citizen savedCitizen = this.citizenService.updateCitizen(id, citizen);
         if(savedCitizen == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
@@ -61,7 +61,7 @@ public class CitizenController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-        if(this.citizenService.delete(id))
+        if(this.citizenService.deleteCitizen(id))
             return new ResponseEntity<>(HttpStatus.OK);
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -84,6 +84,6 @@ public class CitizenController {
 
     @GetMapping("{id}/kids")
     public ResponseEntity<List<Citizen>> getKids(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getKids(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.citizenService.getKidsByCitizen(id), HttpStatus.FOUND);
     }
 }

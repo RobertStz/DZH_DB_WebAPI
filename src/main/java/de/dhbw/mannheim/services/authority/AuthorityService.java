@@ -28,7 +28,7 @@ public class AuthorityService implements IAuthorityService {
     }
 
     @Override
-    public Authority get(Long id) {
+    public Authority getAuthority(Long id) {
         Optional<Authority> authority = this.authorityRepository.findById(id);
         if (authority.isEmpty())
             return null;
@@ -37,12 +37,12 @@ public class AuthorityService implements IAuthorityService {
     }
 
     @Override
-    public Authority insert(Authority authority) {
+    public Authority insertAuthority(Authority authority) {
         return this.authorityRepository.save(authority);
     }
 
     @Override
-    public Authority update(Long id, Authority authority) {
+    public Authority updateAuthority(Long id, Authority authority) {
         if (this.authorityRepository.existsById(id) && id.equals(authority.getId()))
             return this.authorityRepository.save(authority);
         else
@@ -50,7 +50,7 @@ public class AuthorityService implements IAuthorityService {
     }
 
     @Override
-    public Boolean delete(Long id) {
+    public Boolean deleteAuthority(Long id) {
         if (!this.authorityRepository.existsById(id))
             return false;
         else {

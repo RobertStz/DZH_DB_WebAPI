@@ -16,7 +16,7 @@ public class MessageService implements IMessageService {
     }
 
     @Override
-    public Message get(Long id) {
+    public Message getMessage(Long id) {
         Optional<Message> message = this.messageRepository.findById(id);
         if (message.isEmpty())
             return null;
@@ -25,12 +25,12 @@ public class MessageService implements IMessageService {
     }
 
     @Override
-    public Message insert(Message message) {
+    public Message insertMessage(Message message) {
         return this.messageRepository.save(message);
     }
 
     @Override
-    public Message update(Long id, Message message) {
+    public Message updateMessage(Long id, Message message) {
         if (this.messageRepository.existsById(id) && message.getId().equals(id))
             return this.messageRepository.save(message);
         else
@@ -38,7 +38,7 @@ public class MessageService implements IMessageService {
     }
 
     @Override
-    public Boolean delete(Long id) {
+    public Boolean deleteMessage(Long id) {
         if (this.messageRepository.existsById(id)) {
             this.messageRepository.deleteById(id);
             return true;

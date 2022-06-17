@@ -23,7 +23,7 @@ public class MessageController {
 
     @GetMapping("{id}")
     public ResponseEntity<Message> get(@PathVariable Long id) {
-        Message message = this.messageService.get(id);
+        Message message = this.messageService.getMessage(id);
         if(message == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
@@ -32,7 +32,7 @@ public class MessageController {
 
     @PostMapping
     public ResponseEntity<Message> create(Message message) {
-        Message savedMessage = this.messageService.insert(message);
+        Message savedMessage = this.messageService.insertMessage(message);
         if(savedMessage == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
@@ -41,7 +41,7 @@ public class MessageController {
 
     @PutMapping("{id}")
     public ResponseEntity<Message> update(@PathVariable Long id, Message message) {
-        Message savedMessage = this.messageService.update(id, message);
+        Message savedMessage = this.messageService.updateMessage(id, message);
         if(savedMessage == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
@@ -50,7 +50,7 @@ public class MessageController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-        if(this.messageService.delete(id))
+        if(this.messageService.deleteMessage(id))
             return new ResponseEntity<>(true, HttpStatus.OK);
         else
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);

@@ -25,7 +25,7 @@ public class ProcessService implements IProcessService {
     }
 
     @Override
-    public Process get(Long id) {
+    public Process getProcess(Long id) {
         Optional<Process> process = this.processRepository.findById(id);
         if (process.isEmpty())
             return null;
@@ -34,12 +34,12 @@ public class ProcessService implements IProcessService {
     }
 
     @Override
-    public Process insert(Process process) {
+    public Process insertProcess(Process process) {
         return this.processRepository.save(process);
     }
 
     @Override
-    public Process update(Long id, Process process) {
+    public Process updateProcess(Long id, Process process) {
         if (this.processRepository.existsById(id) && process.getId().equals(id))
             return this.processRepository.save(process);
         else
@@ -47,7 +47,7 @@ public class ProcessService implements IProcessService {
     }
 
     @Override
-    public Boolean delete(Long id) {
+    public Boolean deleteProcess(Long id) {
         if (this.processRepository.existsById(id)) {
             this.processRepository.deleteById(id);
             return true;

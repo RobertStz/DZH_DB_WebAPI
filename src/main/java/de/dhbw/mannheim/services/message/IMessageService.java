@@ -4,9 +4,9 @@ import de.dhbw.mannheim.database.entities.Message;
 
 public interface IMessageService {
 
-    Message get(Long id);
-    Message insert(Message message);
-    Message update(Long id, Message message);
-    Boolean delete(Long id);
+    Message getMessage(Long id);
+    Message insertMessage(Message message);
+    Message updateMessage(Long id, Message message);
+    Boolean deleteMessage(Long id);
 
 }

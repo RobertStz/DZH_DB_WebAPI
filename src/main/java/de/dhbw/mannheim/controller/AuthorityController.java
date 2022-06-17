@@ -30,7 +30,7 @@ public class AuthorityController {
 
     @GetMapping("{id}")
     public ResponseEntity<Authority> get(@PathVariable Long id) {
-        Authority authority = this.authorityService.get(id);
+        Authority authority = this.authorityService.getAuthority(id);
         if (authority == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
@@ -39,12 +39,12 @@ public class AuthorityController {
 
     @PostMapping
     public ResponseEntity<Authority> create(@RequestBody Authority authority) {
-        return new ResponseEntity<>(this.authorityService.insert(authority), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.authorityService.insertAuthority(authority), HttpStatus.CREATED);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<Authority> update(@PathVariable Long id, Authority authority) {
-        Authority savedAuthority = this.authorityService.update(id, authority);
+        Authority savedAuthority = this.authorityService.updateAuthority(id, authority);
         if (savedAuthority != null)
             return new ResponseEntity<>(savedAuthority, HttpStatus.OK);
         else
@@ -53,7 +53,7 @@ public class AuthorityController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-        if (this.authorityService.delete(id))
+        if (this.authorityService.deleteAuthority(id))
             return new ResponseEntity<>(true, HttpStatus.OK);
         else
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);

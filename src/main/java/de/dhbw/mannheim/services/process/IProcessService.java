@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface IProcessService {
 
-    Process get(Long id);
-    Process insert(Process process);
-    Process update(Long id, Process process);
-    Boolean delete(Long id);
+    Process getProcess(Long id);
+    Process insertProcess(Process process);
+    Process updateProcess(Long id, Process process);
+    Boolean deleteProcess(Long id);
 
     List<Message> getMessagesByProcess(Long id);
 

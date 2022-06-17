@@ -10,10 +10,10 @@ import java.util.List;
 
 public interface IAuthorityService {
 
-    Authority get(Long id);
-    Authority insert(Authority authority);
-    Authority update(Long id, Authority authority);
-    Boolean delete(Long id);
+    Authority getAuthority(Long id);
+    Authority insertAuthority(Authority authority);
+    Authority updateAuthority(Long id, Authority authority);
+    Boolean deleteAuthority(Long id);
     List<Message> getMessagesByAuthority(Long id);
     List<Process> getProcessesByAuthority(Long id);
     List<Citizen> getCitizensByAuthority(Long id);

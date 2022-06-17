@@ -24,7 +24,7 @@ public class ProcessController {
 
 
     public ResponseEntity<Process> get(@PathVariable Long id) {
-        Process process = this.processService.get(id);
+        Process process = this.processService.getProcess(id);
         if (process == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
@@ -33,7 +33,7 @@ public class ProcessController {
 
     @PostMapping
     public ResponseEntity<Process> create(Process process) {
-        Process savedProcess = this.processService.insert(process);
+        Process savedProcess = this.processService.insertProcess(process);
         if (savedProcess == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
@@ -42,7 +42,7 @@ public class ProcessController {
 
     @PutMapping("{id}")
     public ResponseEntity<Process> update(@PathVariable Long id, Process process) {
-        Process savedProcess = this.processService.update(id, process);
+        Process savedProcess = this.processService.updateProcess(id, process);
         if (savedProcess == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
@@ -51,7 +51,7 @@ public class ProcessController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-        if (this.processService.delete(id))
+        if (this.processService.deleteProcess(id))
             return new ResponseEntity<>(true, HttpStatus.OK);
         else
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);

@@ -39,7 +39,7 @@ public class CitizenService implements ICitizenService {
     }
 
     @Override
-    public Citizen get(Long id) {
+    public Citizen getCitizen(Long id) {
         Optional<Citizen> citizen = this.citizenRepository.findById(id);
         if (citizen.isEmpty())
             return null;
@@ -48,12 +48,12 @@ public class CitizenService implements ICitizenService {
     }
 
     @Override
-    public Citizen create(Citizen citizen) {
+    public Citizen createCitizen(Citizen citizen) {
         return this.citizenRepository.save(citizen);
     }
 
     @Override
-    public Citizen update(Long id, Citizen citizen) {
+    public Citizen updateCitizen(Long id, Citizen citizen) {
         if (this.citizenRepository.existsById(id))
             return this.citizenRepository.save(citizen);
         else
@@ -61,7 +61,7 @@ public class CitizenService implements ICitizenService {
     }
 
     @Override
-    public Boolean delete(Long id) {
+    public Boolean deleteCitizen(Long id) {
         if (this.citizenRepository.existsById(id)) {
             this.citizenRepository.deleteById(id);
             return true;
@@ -85,7 +85,7 @@ public class CitizenService implements ICitizenService {
     }
 
     @Override
-    public List<Citizen> getKids(Long id) {
+    public List<Citizen> getKidsByCitizen(Long id) {
         return this.citizenRepository.findKids(id);
     }
 }
