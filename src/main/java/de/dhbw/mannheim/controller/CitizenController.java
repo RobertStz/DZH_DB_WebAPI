@@ -29,7 +29,7 @@ public class CitizenController {
         if(citizen == null)
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         else
-            return new ResponseEntity<>(citizen, HttpStatus.FOUND);
+            return new ResponseEntity<>(citizen, HttpStatus.OK);
     }
 
     @GetMapping("{id}")
@@ -38,7 +38,7 @@ public class CitizenController {
         if(citizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<>(citizen, HttpStatus.FOUND);
+            return new ResponseEntity<>(citizen, HttpStatus.OK);
     }
 
     @PostMapping
@@ -47,7 +47,7 @@ public class CitizenController {
         if(savedCitizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<>(HttpStatus.FOUND);
+            return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("{id}")
@@ -69,21 +69,21 @@ public class CitizenController {
 
     @GetMapping("{id}/messages")
     public ResponseEntity<List<Message>> getMessages(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getMessagesByCitizen(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.citizenService.getMessagesByCitizen(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/processes")
     public ResponseEntity<List<Process>> getProcesses(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getProcessesByCitizen(id),HttpStatus.FOUND);
+        return new ResponseEntity<>(this.citizenService.getProcessesByCitizen(id),HttpStatus.OK);
     }
 
     @GetMapping("{id}/authorities")
     public ResponseEntity<List<Authority>> getAuthorities(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getAuthoritiesByCitizen(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.citizenService.getAuthoritiesByCitizen(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/kids")
     public ResponseEntity<List<Citizen>> getKids(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getKidsByCitizen(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.citizenService.getKidsByCitizen(id), HttpStatus.OK);
     }
 }

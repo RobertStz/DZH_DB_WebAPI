@@ -27,7 +27,7 @@ public class MessageController {
         if(message == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<>(message, HttpStatus.FOUND);
+            return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
     @PostMapping

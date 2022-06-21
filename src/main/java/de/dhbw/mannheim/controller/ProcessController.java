@@ -28,7 +28,7 @@ public class ProcessController {
         if (process == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<>(process, HttpStatus.FOUND);
+            return new ResponseEntity<>(process, HttpStatus.OK);
     }
 
     @PostMapping
@@ -60,11 +60,11 @@ public class ProcessController {
 
     @GetMapping("{id}/messages")
     public ResponseEntity<List<Message>> getMessages(@PathVariable Long id) {
-        return new ResponseEntity<>(this.processService.getMessagesByProcess(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.processService.getMessagesByProcess(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/authorities")
     public ResponseEntity<List<Authority>> getAuthorities(@PathVariable Long id) {
-        return new ResponseEntity<>(this.processService.getAuthoritiesByProcess(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.processService.getAuthoritiesByProcess(id), HttpStatus.OK);
     }
 }

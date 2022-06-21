@@ -34,7 +34,7 @@ public class AuthorityController {
         if (authority == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<>(authority, HttpStatus.FOUND);
+            return new ResponseEntity<>(authority, HttpStatus.OK);
     }
 
     @PostMapping
@@ -65,17 +65,17 @@ public class AuthorityController {
 
     @GetMapping("{id}/messages")
     public ResponseEntity<List<Message>> getMessages(@PathVariable Long id) {
-        return new ResponseEntity<>(this.authorityService.getMessagesByAuthority(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.authorityService.getMessagesByAuthority(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/processes")
     public ResponseEntity<List<Process>> getProcesses(@PathVariable Long id) {
-        return new ResponseEntity<>(this.authorityService.getProcessesByAuthority(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.authorityService.getProcessesByAuthority(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/citizens")
     public ResponseEntity<List<Citizen>> getCitizens(@PathVariable Long id) {
-        return new ResponseEntity<>(this.authorityService.getCitizensByAuthority(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.authorityService.getCitizensByAuthority(id), HttpStatus.OK);
     }
 
 }
