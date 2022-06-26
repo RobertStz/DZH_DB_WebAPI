@@ -18,8 +18,7 @@ public class Citizen {
     private String taxId;
     private String email;
     private String password;
-
-    private String titel;
+    private String title;
     private String name;
     private String birthName;
     private String firstName;
@@ -80,12 +79,12 @@ public class Citizen {
         this.password = password;
     }
 
-    public String getTitel() {
-        return titel;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitel(String titel) {
-        this.titel = titel;
+    public void setTitel(String title) {
+        this.title = title;
     }
 
     public String getName() {

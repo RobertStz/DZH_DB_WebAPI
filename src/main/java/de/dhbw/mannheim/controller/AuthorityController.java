@@ -5,7 +5,6 @@ import de.dhbw.mannheim.database.entities.Authority;
 import de.dhbw.mannheim.database.entities.Citizen;
 import de.dhbw.mannheim.database.entities.Message;
 import de.dhbw.mannheim.database.entities.Process;
-import de.dhbw.mannheim.database.repositories.AuthorityRepository;
 
 import de.dhbw.mannheim.services.authority.IAuthorityService;
 import io.swagger.v3.oas.annotations.tags.Tag;

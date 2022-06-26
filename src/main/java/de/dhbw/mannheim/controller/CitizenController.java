@@ -26,7 +26,7 @@ public class CitizenController {
     @GetMapping
     public ResponseEntity<Citizen> login(String email, String password) {
         Citizen citizen = this.citizenService.login(email, password);
-        if(citizen == null)
+        if (citizen == null)
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         else
             return new ResponseEntity<>(citizen, HttpStatus.OK);
@@ -35,7 +35,7 @@ public class CitizenController {
     @GetMapping("{id}")
     public ResponseEntity<Citizen> get(@PathVariable Long id) {
         Citizen citizen = this.citizenService.getCitizen(id);
-        if(citizen == null)
+        if (citizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
             return new ResponseEntity<>(citizen, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class CitizenController {
     @PostMapping
     public ResponseEntity<Citizen> create(@RequestBody Citizen citizen) {
         Citizen savedCitizen = this.citizenService.createCitizen(citizen);
-        if(savedCitizen == null)
+        if (savedCitizen == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         else
             return new ResponseEntity<>(HttpStatus.OK);
@@ -53,7 +53,7 @@ public class CitizenController {
     @PutMapping("{id}")
     public ResponseEntity<Citizen> update(@PathVariable Long id, @RequestBody Citizen citizen) {
         Citizen savedCitizen = this.citizenService.updateCitizen(id, citizen);
-        if(savedCitizen == null)
+        if (savedCitizen == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         else
             return new ResponseEntity<>(HttpStatus.OK);
@@ -61,7 +61,7 @@ public class CitizenController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-        if(this.citizenService.deleteCitizen(id))
+        if (this.citizenService.deleteCitizen(id))
             return new ResponseEntity<>(HttpStatus.OK);
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -74,7 +74,7 @@ public class CitizenController {
 
     @GetMapping("{id}/processes")
     public ResponseEntity<List<Process>> getProcesses(@PathVariable Long id) {
-        return new ResponseEntity<>(this.citizenService.getProcessesByCitizen(id),HttpStatus.OK);
+        return new ResponseEntity<>(this.citizenService.getProcessesByCitizen(id), HttpStatus.OK);
     }
 
     @GetMapping("{id}/authorities")
