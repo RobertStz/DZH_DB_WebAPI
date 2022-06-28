@@ -15,8 +15,6 @@ public class Process {
 
     private String name;
 
-    private Long progress;
-
 
     @OneToMany(mappedBy = "process")
     @JsonIgnore
@@ -70,11 +68,4 @@ public class Process {
         this.authorityInvolvedProcesses = authorityInvolvedProcesses;
     }
 
-    public Long getProgress() {
-        return progress;
-    }
-
-    public void setProgress(Long progress) {
-        this.progress = progress;
-    }
 }
