@@ -60,12 +60,11 @@ public class Process {
         this.citizen = citizen;
     }
 
-    public List<Involvement> getAuthorityInvolvedProcesses() {
+    public List<Involvement> getInvolvements() {
         return involvements;
     }
 
-    public void setAuthorityInvolvedProcesses(List<Involvement> involvements) {
+    public void setInvolvements(List<Involvement> involvements) {
         this.involvements = involvements;
     }
-
 }

@@ -83,7 +83,7 @@ public class Citizen {
         return title;
     }
 
-    public void setTitel(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -171,15 +171,19 @@ public class Citizen {
         return processes;
     }
 
+    public void setBirthCountry(String birthCountry) {
+        this.birthCountry = birthCountry;
+    }
+
     public void setProcesses(List<Process> processes) {
         this.processes = processes;
     }
 
-    public List<Responsibility> getAuthorityResponsibleCitizens() {
+    public List<Responsibility> getResponsibilities() {
         return responsibilities;
     }
 
-    public void setAuthorityResponsibleCitizens(List<Responsibility> responsibilities) {
+    public void setResponsibilities(List<Responsibility> responsibilities) {
         this.responsibilities = responsibilities;
     }
 }

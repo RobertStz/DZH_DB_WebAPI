@@ -16,17 +16,24 @@ public class ResponsibilityService implements IResponsibilityService {
 
     @Override
     public Responsibility insert(Responsibility responsibility) {
-
+        if (responsibility.getId().equals(0L))
+            this.responsibilityRepository.save(responsibility);
         return null;
     }
 
     @Override
     public Responsibility update(Long id, Responsibility responsibility) {
+        if (responsibility.getId().equals(id) && this.responsibilityRepository.existsById(id))
+            return this.responsibilityRepository.save(responsibility);
         return null;
     }
 
     @Override
     public Boolean delete(Long id) {
-        return null;
+        if (this.responsibilityRepository.existsById(id)) {
+            this.responsibilityRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

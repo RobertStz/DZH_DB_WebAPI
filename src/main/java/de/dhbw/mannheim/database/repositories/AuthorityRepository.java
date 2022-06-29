@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface AuthorityRepository extends JpaRepository<Authority, Long> {
     @Query("""
-            select distinct a from Authority a left join a.sourceInvolvements sourceInvolvements left join a.targetInvolvements targetInvolvements
+            select distinct a from Authority a left join a.involvements sourceInvolvements left join a.involvements targetInvolvements
             where sourceInvolvements.sourceAuthority.id = ?1 or sourceInvolvements.targetAuthority.id = ?1 or targetInvolvements.sourceAuthority.id = ?1 or targetInvolvements.targetAuthority.id = ?1""")
     List<Authority> findAllByProcess(Long id);
 
