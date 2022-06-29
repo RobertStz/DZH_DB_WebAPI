@@ -64,6 +64,6 @@ public class ProcessService implements IProcessService {
 
     @Override
     public List<Authority> getAuthoritiesByProcess(Long id) {
-        return this.authorityRepository.findByAuthorityInvolvedProcesses_Process_Id(id);
+        return this.authorityRepository.findAllByProcess(id);
     }
 }

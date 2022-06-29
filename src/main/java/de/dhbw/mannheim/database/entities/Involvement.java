@@ -6,14 +6,18 @@ import de.dhbw.mannheim.database.entities.enums.Permission;
 import javax.persistence.*;
 
 @Entity
-public class AuthorityInvolvedProcess {
+@Table(name = "authority_involved_process")
+public class Involvement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @ManyToOne
-    private Authority authority;
+    private Authority sourceAuthority;
+
+    @ManyToOne
+    private Authority targetAuthority;
 
     @ManyToOne
     private Process process;
@@ -30,14 +34,6 @@ public class AuthorityInvolvedProcess {
         this.id = id;
     }
 
-    public Authority getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(Authority authority) {
-        this.authority = authority;
-    }
-
     public Process getProcess() {
         return process;
     }
@@ -52,5 +48,21 @@ public class AuthorityInvolvedProcess {
 
     public void setPermission(Permission permission) {
         this.permission = permission;
+    }
+
+    public Authority getSourceAuthority() {
+        return sourceAuthority;
+    }
+
+    public void setSourceAuthority(Authority sourceAuthority) {
+        this.sourceAuthority = sourceAuthority;
+    }
+
+    public Authority getTargetAuthority() {
+        return targetAuthority;
+    }
+
+    public void setTargetAuthority(Authority targetAuthority) {
+        this.targetAuthority = targetAuthority;
     }
 }

@@ -22,7 +22,7 @@ public class Process {
 
     @OneToMany(mappedBy = "process")
     @JsonIgnore
-    private List<AuthorityInvolvedProcess> authorityInvolvedProcesses;
+    private List<Involvement> involvements;
 
     @ManyToOne
     private Citizen citizen;
@@ -60,12 +60,12 @@ public class Process {
         this.citizen = citizen;
     }
 
-    public List<AuthorityInvolvedProcess> getAuthorityInvolvedProcesses() {
-        return authorityInvolvedProcesses;
+    public List<Involvement> getAuthorityInvolvedProcesses() {
+        return involvements;
     }
 
-    public void setAuthorityInvolvedProcesses(List<AuthorityInvolvedProcess> authorityInvolvedProcesses) {
-        this.authorityInvolvedProcesses = authorityInvolvedProcesses;
+    public void setAuthorityInvolvedProcesses(List<Involvement> involvements) {
+        this.involvements = involvements;
     }
 
 }

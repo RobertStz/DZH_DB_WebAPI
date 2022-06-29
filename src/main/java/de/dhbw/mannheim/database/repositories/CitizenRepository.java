@@ -10,7 +10,9 @@ import java.util.List;
 @Repository
 public interface CitizenRepository extends JpaRepository<Citizen, Long> {
 
-    List<Citizen> findByAuthorityResponsibleCitizens_Authority_Id(Long id);
+    List<Citizen> findByResponsibilities_Citizen_Id(Long id);
+
+
 
     @Query("select distinct c from Citizen c where c.mother.id = ?1 or c.father.id = ?1")
     List<Citizen> findKids(Long id);

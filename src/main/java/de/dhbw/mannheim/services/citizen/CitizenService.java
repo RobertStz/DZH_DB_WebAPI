@@ -78,7 +78,7 @@ public class CitizenService implements ICitizenService {
 
     @Override
     public List<Authority> getAuthoritiesByCitizen(Long id) {
-        return this.authorityRepository.findByAuthorityResponsibleCitizens_Citizen_Id(id);
+        return this.authorityRepository.findAllByProcess(id);
     }
 
     @Override

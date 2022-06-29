@@ -3,7 +3,8 @@ package de.dhbw.mannheim.database.entities;
 import javax.persistence.*;
 
 @Entity
-public class AuthorityResponsibleCitizen {
+@Table(name = "authority_reponsible_citizen")
+public class Responsibility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

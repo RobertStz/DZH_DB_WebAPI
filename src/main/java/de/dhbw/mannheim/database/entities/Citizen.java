@@ -45,7 +45,7 @@ public class Citizen {
 
     @OneToMany(mappedBy = "citizen")
     @JsonIgnore
-    private List<AuthorityResponsibleCitizen> authorityResponsibleCitizens;
+    private List<Responsibility> responsibilities;
 
     public Long getId() {
         return id;
@@ -175,11 +175,11 @@ public class Citizen {
         this.processes = processes;
     }
 
-    public List<AuthorityResponsibleCitizen> getAuthorityResponsibleCitizens() {
-        return authorityResponsibleCitizens;
+    public List<Responsibility> getAuthorityResponsibleCitizens() {
+        return responsibilities;
     }
 
-    public void setAuthorityResponsibleCitizens(List<AuthorityResponsibleCitizen> authorityResponsibleCitizens) {
-        this.authorityResponsibleCitizens = authorityResponsibleCitizens;
+    public void setAuthorityResponsibleCitizens(List<Responsibility> responsibilities) {
+        this.responsibilities = responsibilities;
     }
 }

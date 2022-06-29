@@ -68,11 +68,11 @@ public class AuthorityService implements IAuthorityService {
 
     @Override
     public List<Process> getProcessesByAuthority(Long id) {
-        return this.processRepository.findByAuthorityInvolvedProcesses_Authority_Id(id);
+        return this.processRepository.findByInvolvements(id);
     }
 
     @Override
     public List<Citizen> getCitizensByAuthority(Long id) {
-        return this.citizenRepository.findByAuthorityResponsibleCitizens_Authority_Id(id);
+        return this.citizenRepository.findByResponsibilities_Citizen_Id(id);
     }
 }

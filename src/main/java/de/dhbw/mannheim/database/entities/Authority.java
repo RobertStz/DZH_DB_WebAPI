@@ -18,22 +18,13 @@ public class Authority {
     @JsonIgnore
     private List<Message> messages;
 
+    @OneToMany(mappedBy = "sourceAuthority")
+    @JsonIgnore
+    private List<Involvement> involvements;
+
     @OneToMany(mappedBy = "authority")
     @JsonIgnore
-    private List<AuthorityInvolvedProcess> authorityInvolvedProcesses;
-
-    @OneToMany(mappedBy = "authority")
-    @JsonIgnore
-    private List<AuthorityResponsibleCitizen> authorityResponsibleCitizens;
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private List<Responsibility> responsibilities;
 
     public Long getId() {
         return id;
@@ -43,6 +34,14 @@ public class Authority {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<Message> getMessages() {
         return messages;
     }
@@ -50,20 +49,13 @@ public class Authority {
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
+    
 
-    public List<AuthorityInvolvedProcess> getAuthorityInvolvedProcesses() {
-        return authorityInvolvedProcesses;
+    public List<Responsibility> getResponsibilities() {
+        return responsibilities;
     }
 
-    public void setAuthorityInvolvedProcesses(List<AuthorityInvolvedProcess> authorityInvolvedProcesses) {
-        this.authorityInvolvedProcesses = authorityInvolvedProcesses;
-    }
-
-    public List<AuthorityResponsibleCitizen> getAuthorityResponsibleCitizens() {
-        return authorityResponsibleCitizens;
-    }
-
-    public void setAuthorityResponsibleCitizens(List<AuthorityResponsibleCitizen> authorityResponsibleCitizens) {
-        this.authorityResponsibleCitizens = authorityResponsibleCitizens;
+    public void setResponsibilities(List<Responsibility> responsibilities) {
+        this.responsibilities = responsibilities;
     }
 }
