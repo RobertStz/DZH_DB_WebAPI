@@ -123,8 +123,8 @@ public class Citizen {
         return birthCountry;
     }
 
-    public void setBirthCounty(String birthCounty) {
-        this.birthCountry = birthCounty;
+    public void setBirthCountry(String birthCountry) {
+        this.birthCountry = birthCountry;
     }
 
     public Date getBirthday() {
@@ -169,10 +169,6 @@ public class Citizen {
 
     public List<Process> getProcesses() {
         return processes;
-    }
-
-    public void setBirthCountry(String birthCountry) {
-        this.birthCountry = birthCountry;
     }
 
     public void setProcesses(List<Process> processes) {
