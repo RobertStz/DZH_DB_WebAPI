@@ -1,0 +1,18 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: 2px solid black;
+
+}
+#logIn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+  width: 20%;
+  height: 40%;
+}
+
