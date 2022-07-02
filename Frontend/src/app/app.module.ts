@@ -20,6 +20,7 @@ const myRoutes: Routes = [
 
   //SecuredPath
   {path: 'index', component: AppComponent},
+  {path: 'home', component: StartseiteComponent},
   {path: 'header', component: HeaderComponent}
 
 
