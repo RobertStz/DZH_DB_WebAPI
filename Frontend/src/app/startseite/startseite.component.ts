@@ -9,6 +9,7 @@ export class StartseiteComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
   }
 
