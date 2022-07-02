@@ -19,9 +19,9 @@ export class CitizenService {
   }
 
   //Login Request to log in
-  public logInCitizen(user: string, password: string): Observable<any>{
+  public logInCitizen(user: string, password: string): Observable<Citizen>{
     const parameters = new HttpParams().append('email',user).append('password',password);
-    return this.http.get<any>(this.url,{params: parameters});
+    return this.http.get<Citizen>(this.url,{params: parameters});
   }
 
 

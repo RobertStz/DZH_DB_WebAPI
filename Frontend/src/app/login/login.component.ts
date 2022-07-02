@@ -16,7 +16,9 @@ export class LoginComponent implements OnInit {
   }
 
   login($event: MouseEvent): void{
-
+  console.log("Ich route")
+    this.router.navigate(['index'])
+    /*
     this.user.logInCitizen((document.getElementById('emailInput') as HTMLInputElement).value,(document.getElementById('passwordInput') as HTMLInputElement).value).subscribe( data =>{
       console.log(data.id)
     }, (err: HttpErrorResponse) =>{
@@ -32,6 +34,8 @@ export class LoginComponent implements OnInit {
           break;
       }
     });
+    */
+
   }
 
 }
