@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {AuthServiceGuard} from "./shared/Guards/auth-service.guard";
+import {LoginService} from "./shared/Services/login.service";
 
 const myRoutes: Routes = [
 
@@ -27,7 +28,7 @@ const myRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(myRoutes),
   ],
-  providers: [],
+  providers: [LoginService,AuthServiceGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
