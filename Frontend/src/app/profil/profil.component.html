@@ -1,1 +1,27 @@
-<p>profil works!</p>
+<meta charset="utf-8">
+
+<form class="profile-information">
+  <div class="personal-information">
+    <h2>Persönliche Daten</h2>
+    <label for="firstname">Vorname:</label>
+    <input id="firstname" disabled>
+    <label for="lastname">Nachname:</label>
+    <input id="lastname" disabled>
+    <label for="street">Straße:</label>
+    <input id="street" disabled>
+    <label for="plz">Postleitzahl:</label>
+    <input id="plz" disabled>
+    <label for="city">Ort:</label>
+    <input id="city" disabled>
+  </div>
+  <div class="login-information">
+    <h2>Anmeldedaten</h2>
+    <label for="email">Email:</label>
+    <input autocomplete="off" id="email" type="email" [disabled]="changeLoginData === false">
+    <label for="password">Passwort</label>
+    <input autocomplete="off" id="password" type="password" [disabled]="changeLoginData === false">
+    <button type="button" class="button" *ngIf="change" (click)="changeData($event)"><span>Anmeldedaten ändern</span></button>
+    <button type="button" class="button" *ngIf="save" (click)="saveData($event)"><span>Änderungen speichern</span></button>
+  </div>
+  <button type="button" class="button-back" (click)="goBack($event)"><span>zurück</span></button>
+</form>

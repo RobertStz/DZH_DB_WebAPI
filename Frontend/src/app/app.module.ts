@@ -12,6 +12,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
+import { DecisionComponent } from './decision/decision.component';
 
 const myRoutes: Routes = [
 
@@ -19,10 +20,13 @@ const myRoutes: Routes = [
     children:[
       {path: '', component: StartseiteComponent},
       {path: 'tasks', component: TasksComponent}
+      {path: 'Profile', component: ProfilComponent},
+      {path: 'Decision', component: DecisionComponent}
     ]},
 
   //Login Path
   {path: '', component: LoginComponent},
+
 
 
 
@@ -39,7 +43,8 @@ const myRoutes: Routes = [
     ProfilComponent,
     TasksComponent,
     TimelineComponent,
-    HeaderComponent
+    HeaderComponent,
+    DecisionComponent
   ],
   imports: [
     BrowserModule,
