@@ -19,14 +19,13 @@ const myRoutes: Routes = [
   {path: 'index', component:AppLayoutComponent,
     children:[
       {path: '', component: StartseiteComponent},
+      {path: 'Profile', component: ProfilComponent},
+      {path: 'Decision', component: DecisionComponent}
     ]},
 
   //Login Path
   {path: '', component: LoginComponent},
 
-  {path: 'Profile', component: ProfilComponent},
-
-  {path: 'Decision', component: DecisionComponent}
 
 
 

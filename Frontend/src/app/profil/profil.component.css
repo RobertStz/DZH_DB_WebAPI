@@ -1,0 +1,48 @@
+.profile-information{
+  position: relative;
+  left: 15%;
+  width: 85%;
+}
+
+.personal-information,
+.login-information{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.personal-information input,
+.login-information input{
+  border: none;
+  border-bottom: 2px solid #5C6971;
+  outline: none;
+}
+
+.button{
+  width: 200px;
+  margin-top: 20px;
+  background-color: #23235d;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  color: #FFFFFF;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #5b6b7a;
+}
+
+
+h2{
+  margin-top: 30px;
+  color: #23235d;
+  font-size: 28px;
+}
+
+.personal-information label,
+.login-information label{
+  font-size: 20px;
+}
+
