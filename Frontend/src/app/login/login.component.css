@@ -37,11 +37,11 @@
 #logIn input{
   border: none;
   outline: none;
-  border-bottom: green 2px solid;
+  border-bottom: black 2px solid;
   backdrop-filter: blur(3%);
 }
 #logIn input:focus{
-  border-bottom: blue 2px solid;
+  border-bottom: yellow 2px solid;
 
 }
 #logIn h2{
