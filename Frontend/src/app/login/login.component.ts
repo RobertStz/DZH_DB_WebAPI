@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
 
   login($event: MouseEvent): void{
 
-    this.user.logInCitizen((document.getElementById('') as HTMLInputElement).value,(document.getElementById('') as HTMLInputElement).value).subscribe( data =>{
-      console.log(data)
+    this.user.logInCitizen((document.getElementById('emailInput') as HTMLInputElement).value,(document.getElementById('passwordInput') as HTMLInputElement).value).subscribe( data =>{
+      console.log(data.id)
     }, (err: HttpErrorResponse) =>{
       switch (err.status){
         case 500:

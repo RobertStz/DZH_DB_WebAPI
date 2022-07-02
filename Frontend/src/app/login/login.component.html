@@ -6,12 +6,12 @@
     <h2>Anmeldung</h2>
     <br>
     <label>E-Mail:</label>
-    <input id="emailInput">
+    <input id="emailInput" required>
     <br>
     <label>Password:</label>
-    <input id="passwordInput">
+    <input id="passwordInput" required>
     <br>
-    <button id="submit"  >Log In</button><!-- (click)="login($event)"-->
+    <button id="submit" (click)="login($event)" >Anmelden</button>
   </div>
 
 
