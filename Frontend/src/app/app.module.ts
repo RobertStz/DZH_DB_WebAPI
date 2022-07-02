@@ -19,7 +19,7 @@ const myRoutes: Routes = [
   {path: 'index', component:AppLayoutComponent,
     children:[
       {path: '', component: StartseiteComponent},
-      {path: 'tasks', component: TasksComponent}
+      {path: 'tasks', component: TasksComponent},
       {path: 'Profile', component: ProfilComponent},
       {path: 'Decision', component: DecisionComponent}
     ]},
