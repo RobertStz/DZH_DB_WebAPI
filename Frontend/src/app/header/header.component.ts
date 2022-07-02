@@ -15,7 +15,23 @@ export class HeaderComponent implements OnInit {
 
   title = 'Digitales Zuhause';
 
+  goToHomepage($event: MouseEvent){
+    this.router.navigate(['/index'])
+  }
+
+  goToProfil($event: MouseEvent){
+    this.router.navigate(['/index/Profile'])
+  }
+
+  goToTasks($event: MouseEvent){
+    this.router.navigate([''])
+  }
+
+  goToLinkedProfil($event: MouseEvent){
+    this.router.navigate([''])
+  }
+
   logOut($event: MouseEvent){
-    this.router.navigate(['/'])
+    this.router.navigate([''])
   }
 }

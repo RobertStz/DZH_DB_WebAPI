@@ -14,15 +14,23 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
 import {CitizenService} from "./shared/Services/citizen.service";
+import { DecisionComponent } from './decision/decision.component';
+
 
 const myRoutes: Routes = [
+
+  {path: 'index', component:AppLayoutComponent,
+    children:[
+      {path: '', component: StartseiteComponent},
+      {path: 'Profile', component: ProfilComponent},
+      {path: 'Decision', component: DecisionComponent}
+    ]},
 
   //Login Path
   {path: '', component: LoginComponent},
 
-  //SecuredPath
-  {path: 'index', component: AppComponent},
-  {path: 'header', component: HeaderComponent}
+
+
 
 
 
@@ -37,7 +45,8 @@ const myRoutes: Routes = [
     ProfilComponent,
     TasksComponent,
     TimelineComponent,
-    HeaderComponent
+    HeaderComponent,
+    DecisionComponent
   ],
   imports: [
     BrowserModule,

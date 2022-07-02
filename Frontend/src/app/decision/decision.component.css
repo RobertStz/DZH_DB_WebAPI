@@ -1,26 +1,17 @@
-.profile-information{
+.decisionTransfer{
   position: relative;
   left: 15%;
   width: 85%;
 }
 
-.personal-information,
-.login-information{
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-.personal-information input,
-.login-information input{
-  border: none;
-  border-bottom: 2px solid #5C6971;
-  outline: none;
+#explenationTransfer{
+  font-size: 20px;
 }
 
 .button, .button-back{
-  width: 200px;
+  width: 175px;
   margin-top: 20px;
+  margin-right: 40px;
   background-color: #464694;
   color: white;
   border-radius: 3px;
@@ -38,15 +29,8 @@
   background-color: #5b6b7a;
 }
 
-
 h2{
   margin-top: 30px;
   color: #23235d;
   font-size: 28px;
 }
-
-.personal-information label,
-.login-information label{
-  font-size: 20px;
-}
-
