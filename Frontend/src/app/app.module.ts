@@ -11,6 +11,7 @@ import { StartseiteComponent } from './startseite/startseite.component';
 import { ProfilComponent } from './profil/profil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { HeaderComponent } from './header/header.component';
 
 const myRoutes: Routes = [
 
@@ -19,6 +20,7 @@ const myRoutes: Routes = [
 
   //SecuredPath
   {path: 'index', component: AppComponent},
+  {path: 'header', component: HeaderComponent}
 
 
 
@@ -32,7 +34,8 @@ const myRoutes: Routes = [
     StartseiteComponent,
     ProfilComponent,
     TasksComponent,
-    TimelineComponent
+    TimelineComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+.navbar {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  font-family: sans-serif;
+}
+
+.header{
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: #23235d;
+  font-size: 35px;
+}
+
+#logout{
+  position: absolute;
+  right: 50px;
+  text-decoration: none;
+  color: #23235d;
+  padding: 10px;
+  font-size: 20px;
+}
+#logout p:hover{
+  color: #5b6b7a;
+  text-decoration-line: underline;
+  text-decoration-color: #890313;
+}
+/* Style der Horizontalen Linie */
+hr{
+  border: 1px solid #5b6b7a;
+}
