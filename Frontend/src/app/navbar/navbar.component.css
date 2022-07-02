@@ -1,0 +1,10 @@
+.accordion{
+  border-right: lightgrey 1px solid;
+
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+/*  padding-top: 20px;*/
+}
