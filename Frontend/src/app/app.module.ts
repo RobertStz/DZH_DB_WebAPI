@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {AuthServiceGuard} from "./shared/Guards/auth-service.guard";
 import {LoginService} from "./shared/Services/login.service";
+import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { StartseiteComponent } from './startseite/startseite.component';
+import { ProfilComponent } from './profil/profil.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 const myRoutes: Routes = [
 
@@ -22,7 +27,12 @@ const myRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AppLayoutComponent,
+    StartseiteComponent,
+    ProfilComponent,
+    TasksComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
