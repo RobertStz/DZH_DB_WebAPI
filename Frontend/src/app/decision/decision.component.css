@@ -1,0 +1,36 @@
+.decisionTransfer{
+  position: relative;
+  left: 15%;
+  width: 85%;
+}
+
+#explenationTransfer{
+  font-size: 20px;
+}
+
+.button, .button-back{
+  width: 175px;
+  margin-top: 20px;
+  margin-right: 40px;
+  background-color: #464694;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button-back{
+  background-color: #23235d;
+}
+
+.button:hover, .button-back:hover{
+  background-color: #5b6b7a;
+}
+
+h2{
+  margin-top: 30px;
+  color: #23235d;
+  font-size: 28px;
+}

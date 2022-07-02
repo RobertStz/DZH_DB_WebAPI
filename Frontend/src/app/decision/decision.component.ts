@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-decision',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DecisionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  decision($event: MouseEvent){
+  }
+
+  goBack($event: MouseEvent){
+    this.router.navigate(['/index'])
+  }
 }

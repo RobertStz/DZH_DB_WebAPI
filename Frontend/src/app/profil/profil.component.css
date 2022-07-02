@@ -18,19 +18,23 @@
   outline: none;
 }
 
-.button{
+.button, .button-back{
   width: 200px;
   margin-top: 20px;
-  background-color: #23235d;
+  background-color: #464694;
   color: white;
   border-radius: 3px;
   border: none;
   color: #FFFFFF;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
 }
 
-.button:hover{
+.button-back{
+  background-color: #23235d;
+}
+
+.button:hover, .button-back:hover{
   background-color: #5b6b7a;
 }
 
