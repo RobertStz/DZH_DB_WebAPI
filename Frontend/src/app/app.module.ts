@@ -12,18 +12,17 @@ import { ProfilComponent } from './profil/profil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './navbar/navbar.component';
 
 const myRoutes: Routes = [
+
+  {path: 'index', component:AppLayoutComponent,
+    children:[
+      {path: '', component: StartseiteComponent}
+    ]},
 
   //Login Path
   {path: '', component: LoginComponent},
 
-  //SecuredPath
-  {path: 'index', component: AppComponent},
-  {path: 'home', component: StartseiteComponent},
-  {path: 'header', component: HeaderComponent},
-  {path: 'navbar', component: NavbarComponent}
 
 
 
@@ -40,7 +39,6 @@ const myRoutes: Routes = [
     TasksComponent,
     TimelineComponent,
     HeaderComponent
-    NavbarComponent
   ],
   imports: [
     BrowserModule,

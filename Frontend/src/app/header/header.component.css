@@ -2,8 +2,25 @@
   position: sticky;
   display: flex;
   flex-direction: row;
-  height: 80px;
+  height: 90px;
   font-family: sans-serif;
+  background-color: transparent !important;
+}
+
+.navbar-toggler, .navbar-toggler show{
+  position: relative !important;
+  top: 5px !important;
+  left: 300px !important;
+}
+
+ul .dropdown-menu dropdown-item{
+  background-color: white !important;
+}
+
+#navbarNav{
+  position: relative !important;
+  top: 8px !important;
+  left: 300px !important;
 }
 
 .header{
@@ -12,6 +29,10 @@
   left: 15px;
   color: #23235d;
   font-size: 35px;
+}
+
+#homepage{
+  cursor: pointer;
 }
 
 #logout{
@@ -23,7 +44,7 @@
   padding: 10px;
   font-size: 20px;
 }
-#logout p:hover {
+#logout p:hover, #homepage:hover {
   color: #5b6b7a;
   text-decoration-line: underline;
   text-decoration-color: #890313;
