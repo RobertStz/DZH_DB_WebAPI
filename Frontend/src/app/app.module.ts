@@ -17,7 +17,8 @@ const myRoutes: Routes = [
 
   {path: 'index', component:AppLayoutComponent,
     children:[
-      {path: '', component: StartseiteComponent}
+      {path: '', component: StartseiteComponent},
+      {path: 'tasks', component: TasksComponent}
     ]},
 
   //Login Path

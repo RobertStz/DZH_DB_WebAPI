@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToTasks($event: MouseEvent){
-    this.router.navigate([''])
+    this.router.navigate(['/index/tasks'])
   }
 
   goToLinkedProfil($event: MouseEvent){
