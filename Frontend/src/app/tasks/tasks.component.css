@@ -1,0 +1,15 @@
+.content{
+  position: relative;
+  left: 15%;
+  width: 85%;
+}
+
+h1{
+  color: #23235d;
+  padding: 18px 0;
+  font-size: 45px;
+}
+
+#infoText{
+  font-size: 20px;
+}

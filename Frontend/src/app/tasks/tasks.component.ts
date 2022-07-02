@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TasksComponent implements OnInit {
 
   constructor() { }
+  title = 'Julia Sommer';
 
   ngOnInit(): void {
   }
