@@ -12,16 +12,21 @@ import { ProfilComponent } from './profil/profil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
+import { DecisionComponent } from './decision/decision.component';
 
 const myRoutes: Routes = [
 
   {path: 'index', component:AppLayoutComponent,
     children:[
-      {path: '', component: StartseiteComponent}
+      {path: '', component: StartseiteComponent},
     ]},
 
   //Login Path
   {path: '', component: LoginComponent},
+
+  {path: 'Profile', component: ProfilComponent},
+
+  {path: 'Decision', component: DecisionComponent}
 
 
 
@@ -38,7 +43,8 @@ const myRoutes: Routes = [
     ProfilComponent,
     TasksComponent,
     TimelineComponent,
-    HeaderComponent
+    HeaderComponent,
+    DecisionComponent
   ],
   imports: [
     BrowserModule,
