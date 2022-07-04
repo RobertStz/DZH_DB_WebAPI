@@ -1,9 +1,22 @@
 .content{
   position: relative;
+  background-image: url('src/assets/Back_2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 84vh;
 }
-.content-wrapper{  position: relative;
+.content-wrapper{
+  position: relative;
+  padding: 20px;
+  top: 10%;
   left: 15%;
-  width: 85%;
+  width: 75%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.43);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
 }
 
 h1{
