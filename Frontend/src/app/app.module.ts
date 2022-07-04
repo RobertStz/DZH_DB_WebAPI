@@ -31,11 +31,6 @@ const myRoutes: Routes = [
   //Login Path
   {path: '', component: LoginComponent},
 
-
-
-
-
-
 ]
 
 @NgModule({
