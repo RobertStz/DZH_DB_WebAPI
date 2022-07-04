@@ -1,3 +1,13 @@
+.wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.ng-container{
+margin-right: 5px;
+}
+
 .content{
   position: relative;
   left: 15%;
