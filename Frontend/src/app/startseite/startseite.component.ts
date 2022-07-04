@@ -9,7 +9,7 @@ export class StartseiteComponent implements OnInit {
 
   constructor() { }
 
-  title = 'Herrzlich Willkommen im Digitalen Zuhause von '+' ';
+  title = '❤-lich Willkommen im Digitalen Zuhause von '+' ';
 
   ngOnInit(): void {
   }

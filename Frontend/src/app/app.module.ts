@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {AuthServiceGuard} from "./shared/Guards/auth-service.guard";
-import {LoginService} from "./shared/Services/login.service";
+import {LoginService} from "./shared/login.service";
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { StartseiteComponent } from './startseite/startseite.component';
 import { ProfilComponent } from './profil/profil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
+import {CitizenService} from "./shared/citizen.service";
 import { DecisionComponent } from './decision/decision.component';
+
 
 const myRoutes: Routes = [
 
@@ -49,8 +52,9 @@ const myRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(myRoutes),
+    HttpClientModule,
   ],
-  providers: [LoginService,AuthServiceGuard],
+  providers: [LoginService,AuthServiceGuard, CitizenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

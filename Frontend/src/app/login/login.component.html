@@ -1,13 +1,17 @@
+<meta charset="utf-8">
+<html lang="de">
 <div class="wrapper"> <!-- Flex Row -->
 
   <div id="logIn">
-
-    <label>E-Mail:</label>
-    <input id="emailInput">
-    <label>Password:</label>
-    <input id="passwordInput">
+    <h2>Anmeldung</h2>
     <br>
-    <button>Log In</button>
+    <label>E-Mail:</label>
+    <input id="emailInput" required>
+    <br>
+    <label>Password:</label>
+    <input id="passwordInput" type="password" required>
+    <br>
+    <button id="submit" (click)="login($event)" >Anmelden</button>
   </div>
 
 
