@@ -18,9 +18,8 @@ export class LoginComponent implements OnInit {
 
   login($event: MouseEvent): void{
     this.user.logInCitizen((document.getElementById('emailInput') as HTMLInputElement).value,(document.getElementById('passwordInput') as HTMLInputElement).value).subscribe( data =>{
-      console.log(data.id)
       this.log.myStorage.setItem('key',String(data.id))
-      console.log("Ich route")
+      this.user.myStorage.setItem('name',data.firstName + data.name)
       this.router.navigate(['index'])
     }, (err: HttpErrorResponse) =>{
       switch (err.status){

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from "../shared/login.service";
+import {CitizenService} from "../shared/citizen.service";
 
 @Component({
   selector: 'app-tasks',
@@ -7,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
-  title = 'Julia Sommer';
+  constructor(private log: LoginService, private user: CitizenService) { }
+  title = this.user.myStorage.getItem('name');
+
+  openPro: any []=[];
 
   ngOnInit(): void {
+    this.user.getCitizenProcesses(Number(this.log.myStorage.getItem('key'))).subscribe( userProcesses =>{
+      for (let i = 0; i < userProcesses.length; i++){
+        this.openPro.push(userProcesses[i]);
+      }
+
+
+    })
+
+
   }
 
 }
