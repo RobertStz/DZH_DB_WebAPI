@@ -15,6 +15,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { HeaderComponent } from './header/header.component';
 import {CitizenService} from "./shared/citizen.service";
 import { DecisionComponent } from './decision/decision.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const myRoutes: Routes = [
@@ -43,7 +44,9 @@ const myRoutes: Routes = [
     TasksComponent,
     TimelineComponent,
     HeaderComponent,
-    DecisionComponent
+    DecisionComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,

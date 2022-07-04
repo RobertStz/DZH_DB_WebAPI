@@ -1,4 +1,27 @@
 .input{
   position: relative;
-  top: 20px;
+  /*top: 20px;*/
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+
+}
+article {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100vw;
+}
+
+header {
+
+}
+
+input {
+
+}
+
+footer {
+
 }

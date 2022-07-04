@@ -1,10 +1,18 @@
 <meta charset="utf-8">
+<article>
 
-<!-- Kopfzeile -->
-<app-header></app-header>
+  <!-- Kopfzeile -->
+  <div class="header">
+    <app-header></app-header>
+  </div>
 
+  <!-- Hier werden die Inhalt reingeladen-->
+  <div class="input">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- Footer-->
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</article>
 
-<!-- Hier werden die Inhalt reingeladen-->
-<div class="input">
-  <router-outlet></router-outlet>
-</div>
