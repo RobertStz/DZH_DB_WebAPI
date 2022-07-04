@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {CitizenService} from "../shared/citizen.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {LoginService} from "../shared/login.service";
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,17 @@ import {HttpErrorResponse} from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private user: CitizenService) { }
+  constructor(private router: Router, private user: CitizenService,private log: LoginService) { }
 
   ngOnInit(): void {
   }
 
   login($event: MouseEvent): void{
-  console.log("Ich route")
-    this.router.navigate(['index'])
-    /*
     this.user.logInCitizen((document.getElementById('emailInput') as HTMLInputElement).value,(document.getElementById('passwordInput') as HTMLInputElement).value).subscribe( data =>{
       console.log(data.id)
+      this.log.myStorage.setItem('key',String(data.id))
+      console.log("Ich route")
+      this.router.navigate(['index'])
     }, (err: HttpErrorResponse) =>{
       switch (err.status){
         case 500:
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
           break;
       }
     });
-    */
+
 
   }
 

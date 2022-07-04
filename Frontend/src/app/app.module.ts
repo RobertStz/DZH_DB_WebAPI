@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { DecisionComponent } from './decision/decision.component';
 const myRoutes: Routes = [
 
   {path: 'index', component:AppLayoutComponent,
+    canActivate:[AuthServiceGuard],
     children:[
       {path: '', component: StartseiteComponent},
       {path: 'tasks', component: TasksComponent},

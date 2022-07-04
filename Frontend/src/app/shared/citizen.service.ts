@@ -21,9 +21,9 @@ export class CitizenService {
     return this.http.post<Citizen>(this.url,data,{headers: this.httpHeader});
   }
   //Login Request to log in
-  public logInCitizen(user: string, password: string): Observable<Citizen>{
+  public logInCitizen(user: string, password: string): Observable<any>{
     const parameters = new HttpParams().append('email',user).append('password',password);
-    return this.http.get<Citizen>(this.url,{params: parameters});
+    return this.http.get<any>(this.url,{params: parameters});
   }
   public getCitizenProcesses(id: number): Observable<Process>{
     return this.http.get<Process>(this.url+"/"+id+"/processes");
