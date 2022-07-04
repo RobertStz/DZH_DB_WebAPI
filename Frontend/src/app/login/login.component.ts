@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {CitizenService} from "../shared/Services/citizen.service";
+import {CitizenService} from "../shared/citizen.service";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
