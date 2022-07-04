@@ -32,7 +32,7 @@ public class ProcessController {
     }
 
     @PostMapping
-    public ResponseEntity<Process> create(Process process) {
+    public ResponseEntity<Process> create(@RequestBody Process process) {
         Process savedProcess = this.processService.insertProcess(process);
         if (savedProcess == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
