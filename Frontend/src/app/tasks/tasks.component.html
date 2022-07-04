@@ -3,30 +3,17 @@
 <div class="content">
   <h1>Aufträge von {{title}}</h1>
   <p id="infoText">Hier sehen Sie sämtliche Aufträge, welche von Ihnen Autorisiert werden müssen.</p>
-<!--
-
-    <ng-container>
-      <div class="card" style="width: 18rem;" *ngFor="let i of openPro">
-        <div class="card-body">
-          <h5 class="card-title">Auftrag: {{i.id}}</h5>
-          <p class="card-text">{{i.name}}</p>
-          <a href="/" class="card-link">Auftrag bearbeiten</a>
+    <div class="wrap">
+      <div class="row">
+        <div class="col-sm-3 p-3 black" style="width: 18rem;" *ngFor="let i of openPro">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Auftrag: {{i.id}}</h5>
+              <p class="card-text">{{i.name}}</p>
+              <a routerLink="/" class="btn btn-primary">Auftrag bearbeiten</a>
+            </div>
+          </div>
         </div>
       </div>
-    </ng-container>
-
--->
-  <div class="wrap">
-<div class="row">
-  <div class="col-sm-3 p-3 black" style="width: 18rem;" *ngFor="let i of openPro">
-    <div class="card" >
-      <div class="card-body">
-        <h5 class="card-title">Auftrag: {{i.id}}</h5>
-        <p class="card-text">{{i.name}}</p>
-        <a routerLink="/" class="btn btn-primary">Auftrag bearbeiten</a>
-      </div>
     </div>
-  </div>
-</div>
-</div>
 </div>
