@@ -30,10 +30,10 @@ export class VorgangsService {
     return this.http.put<boolean>(this.url+"/"+data.id,data,{headers: this.httpHeader})
   }
 
-  public getProcessMessages(id: number): Observable<Message>{
-    return this.http.get<Message>(this.url+"/"+id+"/messages");
+  public getProcessMessages(id: number): Observable<Message[]>{
+    return this.http.get<Message[]>(this.url+"/"+id+"/messages");
   }
-  public getProcessAuthorities(id: number): Observable<Authority>{
-    return this.http.get<Authority>(this.url+"/"+id+"/authorities");
+  public getProcessAuthorities(id: number): Observable<Authority[]>{
+    return this.http.get<Authority[]>(this.url+"/"+id+"/authorities");
   }
 }

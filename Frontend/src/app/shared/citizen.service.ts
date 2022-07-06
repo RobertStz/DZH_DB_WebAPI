@@ -16,7 +16,7 @@ export class CitizenService {
 
   constructor(private http: HttpClient) { }
 
-  //Add a ne Citizen
+  //Add a new Citizen
   public setCitizen(data: Citizen): Observable<Citizen>{
     return this.http.post<Citizen>(this.url,data,{headers: this.httpHeader});
   }
