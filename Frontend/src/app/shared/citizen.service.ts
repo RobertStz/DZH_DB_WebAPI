@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class CitizenService {
-
+  myStorage = sessionStorage;
   url: string = 'http://localhost:8080/citizens';
   private httpHeader: HttpHeaders = new HttpHeaders().append('Content-Type', 'application/json');
 
@@ -25,17 +25,17 @@ export class CitizenService {
     const parameters = new HttpParams().append('email',user).append('password',password);
     return this.http.get<Citizen>(this.url,{params: parameters});
   }
-  public getCitizenProcesses(id: number): Observable<Process>{
-    return this.http.get<Process>(this.url+"/"+id+"/processes");
+  public getCitizenProcesses(id: number): Observable<Process[]>{
+    return this.http.get<Process[]>(this.url+"/"+id+"/processes");
   }
-  public getCitizenMessages(id: number): Observable<Message>{
-    return this.http.get<Message>(this.url+"/"+id+"/messages");
+  public getCitizenMessages(id: number): Observable<Message[]>{
+    return this.http.get<Message[]>(this.url+"/"+id+"/messages");
   }
-  public getCitizenKids(id: number): Observable<Citizen>{
-    return this.http.get<Citizen>(this.url+"/"+id+"/kids");
+  public getCitizenKids(id: number): Observable<Citizen[]>{
+    return this.http.get<Citizen[]>(this.url+"/"+id+"/kids");
   }
-  public getCitizenAuthorities(id: number): Observable<Authority>{
-    return this.http.get<Authority>(this.url+"/"+id+"/authorities");
+  public getCitizenAuthorities(id: number): Observable<Authority[]>{
+    return this.http.get<Authority[]>(this.url+"/"+id+"/authorities");
   }
   public deleteCitizen(id: number): Observable<Citizen>{
     return this.http.delete<Citizen>(this.url+"/"+id)

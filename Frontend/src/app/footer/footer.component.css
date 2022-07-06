@@ -1,0 +1,29 @@
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  border-top: lightgrey 2px solid ;
+}
+
+#impressum,
+#dsgvo,
+#support,
+.division{
+  text-decoration: none;
+  display: inline-block;
+  color: #23235d;
+  padding: 18px;
+  font-size: 15px;
+}
+
+#impressum:hover,
+#dsgvo:hover,
+#support:hover{
+  /*color: #5b6b7a;
+  text-decoration-line: underline;
+  text-decoration-color: #890313;*/
+  cursor: pointer;
+}

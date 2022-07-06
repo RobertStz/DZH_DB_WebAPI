@@ -9,10 +9,10 @@ export class LoginService {
   constructor() { }
 
   public isLoggedIn():boolean {
-    if(this.myStorage.getItem('key') == null){
-      return false;
-    }else{
+    if(this.myStorage.getItem('key') !== null){
       return true;
+    }else{
+      return false;
     }
   }
 

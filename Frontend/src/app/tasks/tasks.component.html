@@ -1,15 +1,20 @@
 <meta charset="utf-8">
-
+<div class="contentwrap">
 <div class="content">
   <h1>Aufträge von {{title}}</h1>
-  <p id="infoText">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Datum</h5>
-      <p class="card-text">Kurzbeschreibung</p>
-      <a href="/" class="card-link">Auftrag bearbeiten</a>
+  <p id="infoText">Hier sehen Sie sämtliche Aufträge, welche von Ihnen Autorisiert werden müssen.</p>
+    <div class="wrap">
+      <div class="row">
+        <div class="col-sm-3 p-3 black" style="width: 18rem;" *ngFor="let i of openPro">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Auftrag: {{i.id}}</h5>
+              <p class="card-text">{{i.name}}</p>
+              <a routerLink="/" class="btn btn-primary">Auftrag bearbeiten</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
-
+</div>
