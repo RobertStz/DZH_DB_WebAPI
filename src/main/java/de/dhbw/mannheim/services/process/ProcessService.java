@@ -1,11 +1,8 @@
 package de.dhbw.mannheim.services.process;
 
-import de.dhbw.mannheim.database.entities.Authority;
-import de.dhbw.mannheim.database.entities.Message;
+import de.dhbw.mannheim.database.entities.*;
 import de.dhbw.mannheim.database.entities.Process;
-import de.dhbw.mannheim.database.repositories.AuthorityRepository;
-import de.dhbw.mannheim.database.repositories.MessageRepository;
-import de.dhbw.mannheim.database.repositories.ProcessRepository;
+import de.dhbw.mannheim.database.repositories.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,10 +15,13 @@ public class ProcessService implements IProcessService {
     private final MessageRepository messageRepository;
     private final AuthorityRepository authorityRepository;
 
-    public ProcessService(ProcessRepository processRepository, MessageRepository messageRepository, AuthorityRepository authorityRepository) {
+    private final InvolvementRepository involvementRepository;
+
+    public ProcessService(ProcessRepository processRepository, MessageRepository messageRepository, AuthorityRepository authorityRepository, InvolvementRepository involvementRepository) {
         this.processRepository = processRepository;
         this.messageRepository = messageRepository;
         this.authorityRepository = authorityRepository;
+        this.involvementRepository = involvementRepository;
     }
 
     @Override
@@ -65,5 +65,10 @@ public class ProcessService implements IProcessService {
     @Override
     public List<Authority> getAuthoritiesByProcess(Long id) {
         return this.authorityRepository.findAllByProcess(id);
+    }
+
+    @Override
+    public List<Involvement> getInvolvementsByProcess(Long id) {
+        return this.involvementRepository.findByProcess_Id(id);
     }
 }
