@@ -12,12 +12,12 @@ export class Citizen{
   firstName: string;
   birthPlace: string;
   birthCountry: string;
-  birthDay: Date;
+  birthday: Date;
   gender: Gender;
   mother: string;
   father: string;
   constructor(id: number,taxId: string,email: string,password: string,titel: string,name: string,birthName: string,
-              firstName: string,birthPlace: string,birthCountry: string,birthDay: Date,gender: Gender,mother: string,
+              firstName: string,birthPlace: string,birthCountry: string,birthday: Date,gender: Gender,mother: string,
               father: string) {
 
     this.id = id;
@@ -30,7 +30,7 @@ export class Citizen{
     this.firstName = firstName;
     this.birthPlace = birthPlace;
     this.birthCountry = birthCountry;
-    this.birthDay = birthDay;
+    this.birthday = birthday;
     this.gender = gender;
     this.mother = mother;
     this.father = father;

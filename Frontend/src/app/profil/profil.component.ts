@@ -24,7 +24,8 @@ export class ProfilComponent implements OnInit {
       (document.getElementById('lastname') as HTMLInputElement).value = userData.birthName;
       (document.getElementById('birthCountry') as HTMLInputElement).value = userData.birthCountry;
       (document.getElementById('birthPlace') as HTMLInputElement).value = userData.birthPlace;
-      let dateUser = userData.birthDay;
+      let dateUser = new Date(userData.birthday);
+      console.log(dateUser);
       (document.getElementById('birthDay') as HTMLInputElement).value = String(dateUser.toLocaleDateString());
 
     });
