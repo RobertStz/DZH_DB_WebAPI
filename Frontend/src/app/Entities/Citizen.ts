@@ -1,3 +1,5 @@
+import {Gender} from "./Gender";
+
 export class Citizen{
 
   id: number;
@@ -11,11 +13,11 @@ export class Citizen{
   birthPlace: string;
   birthCountry: string;
   birthDay: Date;
-  gender: string;
+  gender: Gender;
   mother: string;
   father: string;
   constructor(id: number,taxId: string,email: string,password: string,titel: string,name: string,birthName: string,
-              firstName: string,birthPlace: string,birthCountry: string,birthDay: Date,gender: string,mother: string,
+              firstName: string,birthPlace: string,birthCountry: string,birthDay: Date,gender: Gender,mother: string,
               father: string) {
 
     this.id = id;
