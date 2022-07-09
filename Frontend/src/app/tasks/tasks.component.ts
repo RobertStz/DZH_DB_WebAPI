@@ -19,11 +19,12 @@ export class TasksComponent implements OnInit {
       for (let i = 0; i < userProcesses.length; i++){
         this.openPro.push(userProcesses[i]);
       }
-
-
     })
+  }
 
-
+  popup: boolean = false;
+  openPopup($event: MouseEvent){
+      this.popup = true;
   }
 
 }

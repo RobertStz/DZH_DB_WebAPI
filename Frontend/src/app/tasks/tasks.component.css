@@ -41,3 +41,90 @@ h1{
   font-size: 20px;
 }
 
+/* Pop Up Fenster */
+
+@media screen and (max-width: 700px){
+
+  .popup{
+    width: 70%;
+  }
+}
+
+#Filter-head{
+  font-family: Tahoma, Arial, sans-serif;
+  color: #23235d;
+
+}
+label{
+  font-family: Tahoma, Arial, sans-serif;
+  color: #333;
+}
+.radio{
+  margin-left: 4%;
+}
+#suche{
+  font-family: Tahoma, Arial, sans-serif;
+  color: #333;
+  width: 50%;
+}
+#undo{
+  margin-left: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+.popup .content {
+  max-height: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.popup button{
+  background-color: #0d6efd;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  height: 35px;
+  width: 80px;
+}
