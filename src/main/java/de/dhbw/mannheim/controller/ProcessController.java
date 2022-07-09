@@ -1,7 +1,6 @@
 package de.dhbw.mannheim.controller;
 
-import de.dhbw.mannheim.database.entities.Authority;
-import de.dhbw.mannheim.database.entities.Message;
+import de.dhbw.mannheim.database.entities.*;
 import de.dhbw.mannheim.database.entities.Process;
 import de.dhbw.mannheim.services.process.IProcessService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -66,5 +65,10 @@ public class ProcessController {
     @GetMapping("{id}/authorities")
     public ResponseEntity<List<Authority>> getAuthorities(@PathVariable Long id) {
         return new ResponseEntity<>(this.processService.getAuthoritiesByProcess(id), HttpStatus.OK);
+    }
+
+    @GetMapping("{id}/involvements")
+    public ResponseEntity<List<Involvement>> getInvolvements(@PathVariable Long id) {
+        return new ResponseEntity<>(this.processService.getInvolvementsByProcess(id), HttpStatus.OK);
     }
 }
