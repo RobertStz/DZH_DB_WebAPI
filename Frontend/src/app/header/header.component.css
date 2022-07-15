@@ -6,3 +6,7 @@
 .container-fluid{
   border-bottom: 2px lightgrey solid !important;
 }
+
+#message{
+  color: #0000008C;
+}
