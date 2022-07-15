@@ -12,6 +12,7 @@ public class Citizen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(length = 11, nullable = false)
@@ -35,8 +36,7 @@ public class Citizen {
     @OneToOne
     private Citizen father;
 
-    @OneToOne()
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @ManyToOne
     private Address address;
 
     @OneToMany(mappedBy = "citizen")

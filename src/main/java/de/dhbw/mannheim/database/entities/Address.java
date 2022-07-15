@@ -3,6 +3,7 @@ package de.dhbw.mannheim.database.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Address {
@@ -17,8 +18,8 @@ public class Address {
     private String city;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "address")
-    private Citizen citizen;
+    @OneToMany(mappedBy = "address")
+    private List<Citizen> citizen;
 
     public Long getId() {
         return id;
@@ -60,11 +61,11 @@ public class Address {
         this.city = city;
     }
 
-    public Citizen getCitizen() {
+    public List<Citizen> getCitizen() {
         return citizen;
     }
 
-    public void setCitizen(Citizen citizen) {
+    public void setCitizen(List<Citizen> citizen) {
         this.citizen = citizen;
     }
 }
