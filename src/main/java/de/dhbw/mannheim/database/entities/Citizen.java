@@ -35,6 +35,10 @@ public class Citizen {
     @OneToOne
     private Citizen father;
 
+    @OneToOne()
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
     @OneToMany(mappedBy = "citizen")
     @JsonIgnore
     private List<Message> messages;
@@ -181,5 +185,13 @@ public class Citizen {
 
     public void setResponsibilities(List<Responsibility> responsibilities) {
         this.responsibilities = responsibilities;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
