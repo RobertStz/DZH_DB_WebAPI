@@ -21,9 +21,12 @@ export class ProfilComponent implements OnInit {
     this.user.getCitizen(Number(this.log.myStorage.getItem('key'))).subscribe(userData =>{
 
       (document.getElementById('firstname') as HTMLInputElement).value = userData.firstName;
-      (document.getElementById('lastname') as HTMLInputElement).value = userData.birthName;
+      (document.getElementById('lastname') as HTMLInputElement).value = userData.name;
       (document.getElementById('birthCountry') as HTMLInputElement).value = userData.birthCountry;
       (document.getElementById('birthPlace') as HTMLInputElement).value = userData.birthPlace;
+      (document.getElementById('steuernum') as HTMLInputElement).value = userData.taxId;
+      (document.getElementById('street') as HTMLInputElement).value = userData.address.street + " " + userData.address.streetNumber;
+      (document.getElementById('city') as HTMLInputElement).value = userData.address.postcode + " " + userData.address.city;
       let dateUser = new Date(userData.birthday);
       console.log(dateUser);
       (document.getElementById('birthDay') as HTMLInputElement).value = String(dateUser.toLocaleDateString());
