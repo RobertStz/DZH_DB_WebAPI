@@ -16,12 +16,12 @@ export class Citizen{
   birthCountry: string;
   birthday: Date;
   gender: Gender;
-  mother: string;
-  father: string;
+  mother: Citizen;
+  father: Citizen;
   address: Address;
   constructor(id: number,taxId: string,email: string,password: string,titel: string,name: string,birthName: string,
-              firstName: string,birthPlace: string,birthCountry: string,birthday: Date,gender: Gender,mother: string,
-              father: string, address: Address) {
+              firstName: string,birthPlace: string,birthCountry: string,birthday: Date,gender: Gender,mother: Citizen,
+              father: Citizen, address: Address) {
 
     this.id = id;
     this.taxId = taxId;

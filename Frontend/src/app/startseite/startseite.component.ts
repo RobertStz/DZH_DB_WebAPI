@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CitizenService} from "../shared/citizen.service";
 
 @Component({
   selector: 'app-startseite',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartseiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user: CitizenService) { }
 
-  title = '❤-lich Willkommen im Digitalen Zuhause von '+' ';
+  title = '❤-lich Willkommen im Digitalen Zuhause von '+this.user.myStorage.getItem('name');
 
   ngOnInit(): void {
   }
