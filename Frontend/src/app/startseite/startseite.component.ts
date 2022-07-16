@@ -10,9 +10,10 @@ export class StartseiteComponent implements OnInit {
 
   constructor(private user: CitizenService) { }
 
-  title = '❤-lich Willkommen im Digitalen Zuhause von '+this.user.myStorage.getItem('name');
+  title: string = '';
 
   ngOnInit(): void {
+    this.title =  '❤-lich Willkommen im Digitalen Zuhause von '+this.user.myStorage.getItem('name');
   }
 
 }

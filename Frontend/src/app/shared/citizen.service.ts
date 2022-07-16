@@ -44,7 +44,7 @@ export class CitizenService {
     return this.http.get<Citizen>(this.url+"/"+id);
   }
   public updateCitizen(data: Citizen): Observable<Citizen>{
-    return this.http.post<Citizen>(this.url+"/"+data.id,data,{headers: this.httpHeader});
+    return this.http.put<Citizen>(this.url+"/"+data.id,data,{headers: this.httpHeader});
   }
 
 }

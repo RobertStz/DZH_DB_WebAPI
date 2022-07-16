@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {LoginService} from "../shared/login.service";
 import {Citizen} from "../Entities/Citizen";
 import {CitizenService} from "../shared/citizen.service";
+import {Gender} from "../Entities/Gender";
+import {Address} from "../Entities/Address";
 
 @Component({
   selector: 'app-profil',
@@ -16,6 +18,12 @@ export class ProfilComponent implements OnInit {
   changeLoginData = false;
   change = true;
   save = false;
+
+  //Daten zum Bürger
+  email: string = '';
+  password: string = '';
+
+
 
   ngOnInit(): void {
     this.user.getCitizen(Number(this.log.myStorage.getItem('key'))).subscribe(userData =>{
@@ -31,6 +39,9 @@ export class ProfilComponent implements OnInit {
       console.log(dateUser);
       (document.getElementById('birthDay') as HTMLInputElement).value = String(dateUser.toLocaleDateString());
 
+      (document.getElementById('email') as HTMLInputElement).value = userData.email;
+      (document.getElementById('password') as HTMLInputElement).value = userData.password;
+
     });
 
   }
@@ -42,6 +53,15 @@ export class ProfilComponent implements OnInit {
   }
 
   saveData($event: MouseEvent){
+    this.email = (document.getElementById('email') as HTMLInputElement).value;
+    this.password = (document.getElementById('password') as HTMLInputElement).value;
+
+    this.user.getCitizen(Number(this.log.myStorage.getItem('key'))).subscribe(citizen =>{
+      citizen.email = this.email;
+      citizen.password = this.password;
+      this.user.updateCitizen(citizen).subscribe(update =>{});
+    })
+
     this.changeLoginData = false;
     this.change = true;
     this.save = false;

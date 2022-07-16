@@ -8,32 +8,57 @@
 
 .profile-information{
   position: relative;
+  top: 10%;
   left: 15%;
   width: 70%;
-  top: 5%;
+  height: 80%;
+  padding: 20px;
   background: rgba(225, 210, 210, 0.70);
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
-  padding: 20px;
   border-radius: 10px;
+}
+td{
+  width: 36%;
+  vertical-align: top;
+}
+
+.personal-data{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .personal-information,
 .login-information{
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 80%;
 }
 
+h2{
+  margin-top: 18px;
+  color: #23235d;
+  font-size: 45px;
+}
+
+.personal-data label,
+.personal-information label,
+.login-information label{
+  font-size: 24px;
+}
+
+.personal-data input,
 .personal-information input,
 .login-information input{
   border: none;
   border-bottom: 2px solid #5C6971;
   outline: none;
+  font-size: 24px;
 }
 
 .button, .button-back{
-  width: 200px;
+  width: 230px;
   margin-top: 20px;
   background-color: #464694;
   color: white;
@@ -42,6 +67,7 @@
   color: #FFFFFF;
   padding: 10px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .button-back{
@@ -51,16 +77,3 @@
 .button:hover, .button-back:hover{
   background-color: #5b6b7a;
 }
-
-
-h2{
-  margin-top: 30px;
-  color: #23235d;
-  font-size: 28px;
-}
-
-.personal-information label,
-.login-information label{
-  font-size: 20px;
-}
-
