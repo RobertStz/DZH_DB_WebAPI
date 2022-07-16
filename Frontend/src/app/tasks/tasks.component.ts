@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../shared/login.service";
 import {CitizenService} from "../shared/citizen.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tasks',
@@ -9,22 +10,22 @@ import {CitizenService} from "../shared/citizen.service";
 })
 export class TasksComponent implements OnInit {
 
-  constructor(private log: LoginService, private user: CitizenService) { }
+  constructor(private log: LoginService, private user: CitizenService, private router: Router) { }
   title = this.user.myStorage.getItem('name');
 
-  openPro: any []=[];
+  data: any []=[];
 
   ngOnInit(): void {
     this.user.getCitizenProcesses(Number(this.log.myStorage.getItem('key'))).subscribe( userProcesses =>{
       for (let i = 0; i < userProcesses.length; i++){
-        this.openPro.push(userProcesses[i]);
+        this.data.push(userProcesses[i]);
       }
     })
   }
 
-  popup: boolean = false;
-  openPopup($event: MouseEvent){
-      this.popup = true;
+  goToDecision($event: MouseEvent, id: number){
+    this.user.myStorage.setItem('processID', String(id));
+    this.router.navigate(['/index/Decision']);
   }
 
 }

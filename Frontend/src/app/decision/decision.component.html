@@ -5,10 +5,9 @@
   <p id="explenationTransfer">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   <div class="decisionButton">
-    <button type="button" class="button" id="alwaysAccept" (click)="decision($event)"><span>Immer genehmigen</span></button>
-    <button type="button" class="button" id="acceptOnce" (click)="decision($event)"><span>Einmalig genehmigen</span></button>
-    <button type="button" class="button" id="declineOnce" (click)="decision($event)"><span>Einmalig ablehnen</span></button>
-    <button type="button" class="button" id="alwaysDecline" (click)="decision($event)"><span>Immer ablehnen</span></button>
+    <button type="button" class="button" id="alwaysAccept" (click)="decision($event, 'YES')"><span>Immer genehmigen</span></button>
+    <button type="button" class="button" id="acceptOnce" (click)="decision($event, 'ONETIME')"><span>Einmalig genehmigen</span></button>
+    <button type="button" class="button" id="alwaysDecline" (click)="decision($event, 'NO')"><span>Immer ablehnen</span></button>
   </div>
   <button type="button" class="button-back" (click)="goBack($event)"><span>zurück</span></button>
 </div>

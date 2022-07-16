@@ -4,6 +4,7 @@ import {Authority} from "../Entities/Authority";
 import {Message} from "../Entities/Message";
 import {Process} from "../Entities/Process";
 import {Observable} from "rxjs";
+import {Involments} from "../Entities/Involments";
 
 
 @Injectable({
@@ -33,6 +34,11 @@ export class VorgangsService {
   public getProcessMessages(id: number): Observable<Message[]>{
     return this.http.get<Message[]>(this.url+"/"+id+"/messages");
   }
+
+  public getProcessInvolvements(id: number): Observable<Involments[]>{
+    return this.http.get<Involments[]>(this.url+"/"+id+"/involvements");
+  }
+
   public getProcessAuthorities(id: number): Observable<Authority[]>{
     return this.http.get<Authority[]>(this.url+"/"+id+"/authorities");
   }
