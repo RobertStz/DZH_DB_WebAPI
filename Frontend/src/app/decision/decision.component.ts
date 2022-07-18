@@ -11,10 +11,21 @@ import {BehoerdenbeteiligungService} from "../shared/behoerdenbeteiligung.servic
 })
 export class DecisionComponent implements OnInit {
 
+  permission: string = '';
+
   constructor(private router: Router, private process: VorgangsService, private user: CitizenService, private involvements: BehoerdenbeteiligungService) { }
 
   ngOnInit(): void {
-    this.process.getProcessInvolvements(Number(this.user.myStorage.getItem('processID'))).subscribe(process =>{})
+    this.process.getProcessInvolvements(Number(this.user.myStorage.getItem('processID'))).subscribe(process =>{
+      for(let j = 0; j < process.length;j++){
+        if(process[j].id == Number(this.user.myStorage.getItem('processID'))){
+          (document.getElementById('gettingAuth') as HTMLInputElement).value = process[j].targetAuthority.name;
+          (document.getElementById('sendingAuth') as HTMLInputElement).value = process[j].sourceAuthority.name;
+          this.permission = process[j].permission;
+        }
+      }
+
+    })
 
   }
 
@@ -28,6 +39,6 @@ export class DecisionComponent implements OnInit {
   }
 
   goBack($event: MouseEvent){
-    this.router.navigate(['/index'])
+    this.router.navigate(['/index/tasks'])
   }
 }
